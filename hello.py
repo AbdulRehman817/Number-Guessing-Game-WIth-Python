@@ -4,16 +4,17 @@ while True:
     
     user_input=int(input("\nGuess number: "));
     choices=random.choice(numbers);
-    
-    if user_input==choices:
-        print("\nYou have guessed the correct number which is ")
-        print("Computer generated number was ",choices)
-        print("Your number was ",user_input)
-        break;
+    diff=abs(user_input-choices)
+    if diff==0:
+        print("Correct",user_input," ",choices);
+        break
+    elif diff <=2:
+        print("🔥 Very close!",user_input," ",choices);
+    elif diff <=5:
+            print("😐 Getting warmer...",user_input," ",choices);
     else:
-        print("\nYou have not guessed the correct number ")
-        print("Computer generated number was ",choices)
-        print("Your number was",user_input)
+        print("🧊 Ice cold!",user_input," ",choices);
+
 
 
 
